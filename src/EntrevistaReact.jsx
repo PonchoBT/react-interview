@@ -4,6 +4,8 @@ import { UseStateComponent } from './components/useStateComponent';
 import { UseEffectComponent } from './components/useEffectComponent';
 import { UseMemoComponent } from './components/useMemoComponent';
 import { UseContextComponent } from './components/useContextComponent';
+import { ErrorBoundary } from './components/ErrorBoundary';
+import { BuggyCounter } from './components/BuggyCounter';
 import { Container, Paper, Typography, Box } from '@mui/material';
 // 2. Componente principal para la entrevista
 export default function EntrevistaReact() {
@@ -30,10 +32,15 @@ export default function EntrevistaReact() {
             Hooks Practice for Interview
           </Typography>
           <Box sx={{ display: 'grid', gap: 4 }}>
-            <UseStateComponent />
-            <UseEffectComponent />
-            <UseMemoComponent />
-            <UseContextComponent />
+            <ErrorBoundary>
+              <BuggyCounter />
+            </ErrorBoundary>
+            <ErrorBoundary>
+              <UseStateComponent />
+              <UseEffectComponent />
+              <UseMemoComponent />
+              <UseContextComponent />
+            </ErrorBoundary>
           </Box>
         </Container>
       </Paper>
