@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { TemaContext } from './context/TemaContext';
 import { UseStateComponent } from './components/useStateComponent';
-import { UseEffectComponent } from './components/useEffectComponent';
-import { UseMemoComponent } from './components/useMemoComponent';
-import { UseContextComponent } from './components/useContextComponent';
+import { UseEffectComponent } from './components/UseEffectComponent';
+import { UseMemoComponent } from './components/UseMemoComponent';
+import { UseContextComponent } from './components/UseContextComponent';
 import { UseReducerComponent } from './components/UseReducerComponent';
 import { UseCallbackComponent } from './components/UseCallbackComponent';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { BuggyCounter } from './components/BuggyCounter';
+import UseEffectApiComponent from './components/UseEffectApiComponent';
 import { Container, Paper, Typography, Box } from '@mui/material';
 // 2. Componente principal para la entrevista
 export default function EntrevistaReact() {
@@ -45,6 +46,9 @@ export default function EntrevistaReact() {
               </div>
               <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
                 <UseEffectComponent />
+              </div>
+              <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
+                <UseEffectApiComponent />
               </div>
               <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
                 <UseMemoComponent />
