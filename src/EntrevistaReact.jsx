@@ -4,6 +4,7 @@ import { UseStateComponent } from './components/useStateComponent';
 import { UseEffectComponent } from './components/useEffectComponent';
 import { UseMemoComponent } from './components/useMemoComponent';
 import { UseContextComponent } from './components/useContextComponent';
+import { UseReducerComponent } from './components/UseReducerComponent';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { BuggyCounter } from './components/BuggyCounter';
 import { Container, Paper, Typography, Box } from '@mui/material';
@@ -29,7 +30,7 @@ export default function EntrevistaReact() {
             gutterBottom 
             sx={{ color: 'back', textAlign: 'center', mb: 4 }}
           >
-            Hooks Practice for Interview
+           Interview React
           </Typography>
           <Box sx={{ display: 'grid', gap: 4 }}>
             <ErrorBoundary>
@@ -40,6 +41,7 @@ export default function EntrevistaReact() {
               <UseEffectComponent />
               <UseMemoComponent />
               <UseContextComponent />
+              <UseReducerComponent />
             </ErrorBoundary>
           </Box>
         </Container>
