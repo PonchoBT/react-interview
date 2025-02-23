@@ -5,6 +5,7 @@ import { UseEffectComponent } from './components/useEffectComponent';
 import { UseMemoComponent } from './components/useMemoComponent';
 import { UseContextComponent } from './components/useContextComponent';
 import { UseReducerComponent } from './components/UseReducerComponent';
+import { UseCallbackComponent } from './components/UseCallbackComponent';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { BuggyCounter } from './components/BuggyCounter';
 import { Container, Paper, Typography, Box } from '@mui/material';
@@ -34,14 +35,29 @@ export default function EntrevistaReact() {
           </Typography>
           <Box sx={{ display: 'grid', gap: 4 }}>
             <ErrorBoundary>
-              <BuggyCounter />
+              <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
+                <BuggyCounter />
+              </div>
             </ErrorBoundary>
             <ErrorBoundary>
-              <UseStateComponent />
-              <UseEffectComponent />
-              <UseMemoComponent />
-              <UseContextComponent />
-              <UseReducerComponent />
+              <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
+                <UseStateComponent />
+              </div>
+              <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
+                <UseEffectComponent />
+              </div>
+              <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
+                <UseMemoComponent />
+              </div>
+              <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
+                <UseContextComponent />
+              </div>
+              <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
+                <UseReducerComponent />
+              </div>
+              <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
+                <UseCallbackComponent />
+              </div>
             </ErrorBoundary>
           </Box>
         </Container>
