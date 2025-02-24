@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { TemaContext } from './context/TemaContext';
 import { UseStateComponent } from './components/useStateComponent';
-import { UseEffectComponent } from './components/UseEffectComponent';
-import { UseMemoComponent } from './components/UseMemoComponent';
-import { UseContextComponent } from './components/UseContextComponent';
-import { UseReducerComponent } from './components/UseReducerComponent';
-import { UseCallbackComponent } from './components/UseCallbackComponent';
+import { UseState2Component } from './components/useState2Component';
+import { UseEffectComponent } from './components/useEffectComponent';
+import { UseEffect2Component } from './components/useEffect2Component';
+import { UseMemoComponent } from './components/useMemoComponent';
+import { UseMemo2Component } from './components/useMemo2Component';
+import { UseContextComponent } from './components/useContextComponent';
+import { UseReducerComponent } from './components/useReducerComponent';
+import { UseCallbackComponent } from './components/useCallbackComponent';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { BuggyCounter } from './components/BuggyCounter';
-import UseEffectApiComponent from './components/UseEffectApiComponent';
+import UseEffectApiComponent from './components/useEffectApiComponent';
 import { Container, Paper, Typography, Box } from '@mui/material';
+import { UseContext2Component } from './components/useContext2Component';
 // 2. Componente principal para la entrevista
-export default function EntrevistaReact() {
+export default function InterviewReact() {
   // Estado para el tema
   const [temaOscuro, setTemaOscuro] = useState(false);
 
@@ -45,7 +49,13 @@ export default function EntrevistaReact() {
                 <UseStateComponent />
               </div>
               <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
+                <UseState2Component />
+              </div>
+              <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
                 <UseEffectComponent />
+              </div>
+              <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
+                <UseEffect2Component />
               </div>
               <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
                 <UseEffectApiComponent />
@@ -54,7 +64,13 @@ export default function EntrevistaReact() {
                 <UseMemoComponent />
               </div>
               <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
+                <UseMemo2Component />
+              </div>
+              <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
                 <UseContextComponent />
+              </div>
+              <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
+                <UseContext2Component />
               </div>
               <div className="card mb-3" style={{ border: '1px solid #ddd', padding: '10px' }}>
                 <UseReducerComponent />

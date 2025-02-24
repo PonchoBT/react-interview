@@ -1,10 +1,10 @@
-import EntrevistaReact from './EntrevistaReact';
-import './EntrevistaReact.css';
+import InterviewReact from './InterviewReact';
+import './InterviewReact.css';
 
 function App() {
   return (
     <div>
-      <EntrevistaReact />
+      <InterviewReact />
     </div>
   );
 }
