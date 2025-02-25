@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
+
+const highlightText = (text, color) => `<span style="color: ${color}">${text}</span>`;
 
 export const UseMemoComponent = () => {
   const [num1, setNum1] = useState("");
@@ -57,6 +59,42 @@ export const UseMemoComponent = () => {
           </div>
         )}
       </div>
+      <pre style={{
+        backgroundColor: '#282c34',
+        padding: '15px',
+        borderRadius: '4px',
+        overflowX: 'auto',
+        margin: '20px 0'
+      }}>
+        <code 
+          style={{
+            color: '#abb2bf',
+            fontFamily: 'Consolas, Monaco, "Andale Mono", monospace',
+            fontSize: '14px',
+            lineHeight: '1.5',
+            whiteSpace: 'pre'
+          }}
+          dangerouslySetInnerHTML={{
+            __html: `import React, { ${highlightText('useState', '#e06c75')}, ${highlightText('useMemo', '#e06c75')} } from ${highlightText('"react"', '#98c379')};
+
+export function ${highlightText('UseMemoComponent', '#61afef')}() {
+  const [${highlightText('num1', '#d19a66')}, ${highlightText('setNum1', '#61afef')}] = ${highlightText('useState', '#e06c75')}("");
+  const [${highlightText('num2', '#d19a66')}, ${highlightText('setNum2', '#61afef')}] = ${highlightText('useState', '#e06c75')}("");
+
+  const ${highlightText('resultadoMemoizado', '#61afef')} = ${highlightText('useMemo', '#e06c75')}(() => {
+    if (${highlightText('num1', '#d19a66')} === "" || ${highlightText('num2', '#d19a66')} === "") return null;
+    const numero1 = parseFloat(${highlightText('num1', '#d19a66')});
+    const numero2 = parseFloat(${highlightText('num2', '#d19a66')});
+    return {
+      suma: numero1 + numero2,
+      resta: numero1 - numero2,
+      multiplicacion: numero1 * numero2,
+      division: numero2 !== 0 ? numero1 / numero2 : "Error"
+    };
+  }, [${highlightText('num1', '#d19a66')}, ${highlightText('num2', '#d19a66')}]);`
+          }}
+        />
+      </pre>
     </div>
   );
 };

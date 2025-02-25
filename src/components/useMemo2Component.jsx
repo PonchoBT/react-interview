@@ -1,5 +1,7 @@
 import React, { useState, useMemo } from 'react';
 
+const highlightText = (text, color) => `<span style="color: ${color}">${text}</span>`;
+
 export function UseMemo2Component() {
   const [numbers, setNumbers] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   const [filterValue, setFilterValue] = useState('');
@@ -91,6 +93,49 @@ export function UseMemo2Component() {
           </ul>
         </small>
       </div>
+
+      <pre style={{
+        backgroundColor: '#282c34',
+        padding: '15px',
+        borderRadius: '4px',
+        overflowX: 'auto',
+        margin: '20px 0'
+      }}>
+        <code 
+          style={{
+            color: '#abb2bf',
+            fontFamily: 'Consolas, Monaco, "Andale Mono", monospace',
+            fontSize: '14px',
+            lineHeight: '1.5',
+            whiteSpace: 'pre'
+          }}
+          dangerouslySetInnerHTML={{
+            __html: `import React, { ${highlightText('useState', '#e06c75')}, ${highlightText('useMemo', '#e06c75')} } from ${highlightText('"react"', '#98c379')};
+
+export function ${highlightText('UseMemo2Component', '#61afef')}() {
+  const [${highlightText('numbers', '#d19a66')}, ${highlightText('setNumbers', '#61afef')}] = ${highlightText('useState', '#e06c75')}([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  const [${highlightText('filterValue', '#d19a66')}, ${highlightText('setFilterValue', '#61afef')}] = ${highlightText('useState', '#e06c75')}('');
+
+  const ${highlightText('expensiveValue', '#61afef')} = ${highlightText('useMemo', '#e06c75')}(() => {
+    console.log(${highlightText('"Calculando valores..."', '#98c379')});
+    return ${highlightText('numbers', '#d19a66')}.reduce((acc, num) => {
+      let result = acc;
+      for (let i = 0; i < 1000000; i++) {
+        result += Math.sqrt(num * i);
+      }
+      return result;
+    }, 0);
+  }, [${highlightText('numbers', '#d19a66')}]);
+
+  const ${highlightText('filteredNumbers', '#61afef')} = ${highlightText('useMemo', '#e06c75')}(() => {
+    console.log(${highlightText('"Filtrando números..."', '#98c379')});
+    return ${highlightText('numbers', '#d19a66')}.filter(num => 
+      num.toString().includes(${highlightText('filterValue', '#d19a66')})
+    );
+  }, [${highlightText('numbers', '#d19a66')}, ${highlightText('filterValue', '#d19a66')}]);`
+          }}
+        />
+      </pre>
     </div>
   );
 } 
